@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "melzi",
+			"path": "../../../PlatformIO/Projects/melzi"
+		}
+	],
+	"settings": {}
+}
