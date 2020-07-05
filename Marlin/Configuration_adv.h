@@ -2061,7 +2061,7 @@
                                                   //   Filament can be extruded repeatedly from the Filament Change menu
                                                   //   until extrusion is consistent, and to purge old filament.
   #define ADVANCED_PAUSE_RESUME_PRIME          1  // (mm) Extra distance to prime nozzle after returning from park.
-  //#define ADVANCED_PAUSE_FANS_PAUSE             // Turn off print-cooling fans while the machine is paused.
+  #define ADVANCED_PAUSE_FANS_PAUSE             // Turn off print-cooling fans while the machine is paused.
 
                                                   // Filament Unload does a Retract, Delay, and Purge first:
   #define FILAMENT_UNLOAD_PURGE_RETRACT       13  // (mm) Unload initial retract length.
@@ -2212,10 +2212,10 @@
   #define INTERPOLATE       true  // Interpolate X/Y/Z_MICROSTEPS to 256
 
   #if AXIS_IS_TMC(X)
-    #define X_CURRENT       1000        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT       960        // (mA) RMS current. Multiply by 1.414 for peak current.
     #define X_CURRENT_HOME  X_CURRENT  // (mA) RMS current for sensorless homing
     #define X_MICROSTEPS     256    // 0..256
-    #define X_RSENSE          0.17
+    #define X_RSENSE          0.22
     #define X_CHAIN_POS      -1    // <=0 : Not chained. 1 : MCU MOSI connected. 2 : Next in chain, ...
   #endif
 
@@ -2228,10 +2228,10 @@
   #endif
 
   #if AXIS_IS_TMC(Y)
-    #define Y_CURRENT       1000
+    #define Y_CURRENT       960
     #define Y_CURRENT_HOME  Y_CURRENT
     #define Y_MICROSTEPS     256
-    #define Y_RSENSE          0.17
+    #define Y_RSENSE          0.22
     #define Y_CHAIN_POS      -1
   #endif
 
@@ -2244,10 +2244,10 @@
   #endif
 
   #if AXIS_IS_TMC(Z)
-    #define Z_CURRENT       1000
+    #define Z_CURRENT       960
     #define Z_CURRENT_HOME  Z_CURRENT
     #define Z_MICROSTEPS     256
-    #define Z_RSENSE          0.17
+    #define Z_RSENSE          0.22
     #define Z_CHAIN_POS      -1
   #endif
 
@@ -2276,9 +2276,9 @@
   #endif
 
   #if AXIS_IS_TMC(E0)
-    #define E0_CURRENT      1000
+    #define E0_CURRENT      960
     #define E0_MICROSTEPS    256
-    #define E0_RSENSE         0.17
+    #define E0_RSENSE         0.22
     #define E0_CHAIN_POS     -1
   #endif
 
@@ -2421,7 +2421,8 @@
    * Define you own with
    * { <off_time[1..15]>, <hysteresis_end[-3..12]>, hysteresis_start[1..8] }
    */
-  #define CHOPPER_TIMING CHOPPER_DEFAULT_24V
+  #define CHOPPER_TIMING {3, -3, 1}
+  //#define CHOPPER_TIMING CHOPPER_DEFAULT_24V
 
   /**
    * Monitor Trinamic drivers
