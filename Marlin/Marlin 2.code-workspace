@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "Marlin firmware",
+			"path": "../../../PlatformIO/Projects/Marlin firmware"
+		}
+	],
+	"settings": {}
+}
