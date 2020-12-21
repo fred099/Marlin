@@ -190,3 +190,4 @@ __pycache__
 # Simulation / Native
 eeprom.dat
 imgui.ini
+Marlin/src/HAL/LPC1768/eeprom_api 2.h
